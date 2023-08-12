@@ -1,20 +1,30 @@
 import { Logo } from './Logo'
-import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineSearch, AiOutlineSetting } from 'react-icons/ai'
+import { HiOutlineSupport } from 'react-icons/hi'
 import { MainNavigation } from './MainNavigation'
+import { NavItem } from './NavItem'
+import { UsedSpaceWidget } from './UseedSpaceWidget'
+import { Profile } from './Profile'
+import { InputRoot, InputControl, InputPrefix } from '../Input'
 export function SideBar() {
   return (
-    <aside className="space-y-6 border-r  border-zinc-200 px-5 py-8">
+    <aside className="flex flex-col gap-6 border-r  border-zinc-200 px-5 py-8">
       <Logo />
 
-      <div className="mx-1 flex w-full items-center  gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm">
-        <AiOutlineSearch className="h-5 2-5 text-zinc-500" />
-        <input
-          className="flex-1 border-none bg-transparent p-0 text-zinc-900 placeholder-zinc-600 outline-none"
-          placeholder="Search"
-          type="text"
-        />
-      </div>
+      <InputRoot>
+          <AiOutlineSearch className=" h-5 w-5 text-zinc-500 " />
+          <InputControl placeholder="Search" />
+      </InputRoot>
       <MainNavigation />
+      <div className="mt-auto flex flex-col gap-6">
+        <nav>
+          <NavItem title="Support" icon={HiOutlineSupport} />
+          <NavItem title="Settings" icon={AiOutlineSetting} />
+        </nav>
+        <UsedSpaceWidget />
+        <div className="h-px bg-zinc-200"></div>
+        <Profile />
+      </div>
     </aside>
   )
 }
