@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className='antialiased'>
       <body className={`min-h-screen grid grid-cols-app ${inter.className}`}>
         <SideBar />
-        <main className="px-4 pb-12 pt-8">{children}</main>
+        <main className="px-8 pb-12 pt-8">{children}</main>
       </body>
     </html>
   )
