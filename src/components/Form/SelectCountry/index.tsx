@@ -3,7 +3,7 @@ import * as Select from '@radix-ui/react-select'
 import { ReactNode } from 'react'
 import { BsChevronCompactDown } from 'react-icons/bs'
 
-interface SelectCountryProps {
+interface SelectCountryProps extends Select.SelectProps{
   children: ReactNode
   placeholder: string
 }
@@ -26,7 +26,7 @@ export function SelectCountry({ children,placeholder}: SelectCountryProps) {
           side="bottom"
           position="popper"
           sideOffset={8}
-          className="z-10 rounded-lg border jb border-x-zinc-200 overflow-hidden bg-white w-[--radix-select-trigger-width]"
+          className="z-10 rounded-lg border jb border-x-zinc-200 overflow-hidden bg-white w-[--radix-select-trigger-width] shadow-sm"
         >
           <Select.Viewport>
             {children}

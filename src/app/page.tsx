@@ -4,6 +4,7 @@ import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
 import { AiOutlineMail } from 'react-icons/ai'
 import { SelectCountry } from '@/components/Form/SelectCountry'
 import { SelectItem } from '@/components/Form/SelectCountry/selectItem'
+import { UserBio } from '@/components/Form/Bio'
 
 export default function Home() {
   return (
@@ -93,15 +94,12 @@ export default function Home() {
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="country"
-            >Country</label>
-            <SelectCountry
-            placeholder='Select your country'>
-              <SelectItem
-              text='Brasil'
-              value='br' />
+            >
+              Country
+            </label>
+            <SelectCountry placeholder="Select your country">
+              <SelectItem text="Brasil" value="br" />
             </SelectCountry>
-
-             
           </div>
           <div className="grid grid-cols-form gap-3 pt-6">
             <label
@@ -110,14 +108,9 @@ export default function Home() {
             >
               Time zone
             </label>
-            <SelectCountry
-            placeholder='Select your timezone'>
-              <SelectItem
-              text='Pacific standard Time (UTC-08:00)'
-              value='-8' />
-              <SelectItem
-              text='America Brasil (UTC-03:00)'
-              value='-3' />
+            <SelectCountry placeholder="Select your timezone">
+              <SelectItem text="Pacific standard Time (UTC-08:00)" value="-8" />
+              <SelectItem text="America Brasil (UTC-03:00)" value="-3" />
             </SelectCountry>
           </div>
           <div className="grid grid-cols-form gap-3 pt-6">
@@ -127,6 +120,7 @@ export default function Home() {
                 Write a short introduction
               </span>
             </label>
+            <UserBio />
           </div>
           <div className="grid grid-cols-form gap-3 pt-6">
             <label
