@@ -2,6 +2,8 @@ import { SettingsTabs } from '../components/SettingTabs'
 import * as FileInput from '../components/Form/FileInput'
 import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
 import { AiOutlineMail } from 'react-icons/ai'
+import { SelectCountry } from '@/components/Form/SelectCountry'
+import { SelectItem } from '@/components/Form/SelectCountry/selectItem'
 
 export default function Home() {
   return (
@@ -91,10 +93,15 @@ export default function Home() {
             <label
               className="text-sm font-medium text-zinc-700"
               htmlFor="country"
-            >
-              Country
-            </label>
-            <div className=""></div>
+            >Country</label>
+            <SelectCountry
+            placeholder='Select your country'>
+              <SelectItem
+              text='Brasil'
+              value='br' />
+            </SelectCountry>
+
+             
           </div>
           <div className="grid grid-cols-form gap-3 pt-6">
             <label
@@ -103,7 +110,15 @@ export default function Home() {
             >
               Time zone
             </label>
-            <div className=""></div>
+            <SelectCountry
+            placeholder='Select your timezone'>
+              <SelectItem
+              text='Pacific standard Time (UTC-08:00)'
+              value='-8' />
+              <SelectItem
+              text='America Brasil (UTC-03:00)'
+              value='-3' />
+            </SelectCountry>
           </div>
           <div className="grid grid-cols-form gap-3 pt-6">
             <label className="text-sm font-medium text-zinc-700 " htmlFor="bio">
@@ -127,7 +142,7 @@ export default function Home() {
             <FileInput.Root>
               <FileInput.Trigger />
               <FileInput.FileList />
-              <FileInput.Control multiple  />
+              <FileInput.Control multiple />
             </FileInput.Root>
           </div>
 
